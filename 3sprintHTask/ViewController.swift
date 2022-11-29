@@ -8,12 +8,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    var touches = 0 {
+        didSet {
+            lebelCounter.text = "Значение счётчика: \(touches)"
+        }
     }
-
-
+    
+    @IBOutlet weak var lebelCounter: UILabel!
+    @IBOutlet weak var buttonCounter: UIButton!
+    
+    @IBAction func buttonCount(_ sender: Any) {
+        touches += 1
+    }
 }
 
